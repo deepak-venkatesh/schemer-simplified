@@ -110,57 +110,6 @@ well. I am still learning Lisp and programming. With every subsequent reading of
 #+TOC: headlines 4        ; insert ToC here (on its own page)
 #+LATEX: \clearpage
 
-
-* What is Lisp?
-
-** History
-
-LISP stands for List Processor or List Processing. It is a programming language which originated around 1958 at the Massachusetts Institute of Technology (MIT). The original paper titled
-`Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I' was published later in 1960 by John McCarthy the creator or as some put it the discoverer of Lisp. A trivia: The
-term Artificial Intelligence (AI) which has eneterd the public's lexicon today was coined by John McCarthy. The orginal language for AI implementation was none other than Lisp. But the language was geared
-towards symbolic artifical intelliegnece. McCarthy probably wrote his paper as a theoretical exercise and one of his students Steve Russell, as legend says, implemented it overnight on an IBM 704 computer with punch cards!
-At one point of time there were operating systems, hardware called Lisp machines but all that is a part of computing history now.
-
-** Why Lisp?
-
-Lisp has little to no syntax. It is very easy to pick up, I would say even easier than Python. Everything in Lisp is a singly linked list. Each element in a list is called a ~cons~ cell. And a ~cons~ is made of two components - ~car~ and ~cdr~.
-~car~ stands for `contents of address register' and ~cdr~ stands for `contents of decrement register'. These were catered to the IBM 704 on which it was first implemented. There is no reason to evangelize Lisp like many prominent
-computer scientists of the past do. My preference comes from the fact that both Lisp and Python take the reader immediately to computer science concepts without wasting time on syntax.
-
-#+LATEX: \vspace{1em}
-
-~[*|*]---> cdr~ $\newline$
-  ~|~ $\newline$
-  ~|~ $\newline$
-  ~V~ $\newline$
-  ~car~
-#+LATEX: \vspace{1em}
-
-Lisp invented a whole long list of computer science concepts which are taken for granted today. Some of which include:
-+ Garbage collection
-+ REPL
-+ Macros
-+ Homoiconicity (Code = Data)
-+ Dynamic Typing
-+ First Class Functions
-+ Closures
-+ Tail Call Optimization
-  etc.
-
-  
-Lisp uses a prefix mathematical notation, meaning that we do not say ~(2 + 5)~ but ~(+ 2 5)~. The first element could be a function, a special form, or a macro for that matter. Contents in the list get `evaluated'. There are many
-dialects of Lisp, the famous ones are Common Lisp, Clojure, Racket which is a type of Scheme Lisp.
-
-** Resources to learn Lisp
-
-The best introductory textbook in my opinion is Professor David Touretzky's book titled `Common Lisp A Gentle Introduction to Symbolic Computing' (2nd ed.). Following that `The Little Schemer' and `The Seasoned Schemer'. The other
-option which is recommended is `How to Design Programs: An Introduction to Programming and Computing', though I have not read it. Finally everyone needs to read `Structure and Interpretation of Computer Programs', myself included.
-
-#+LATEX: \vspace{1em}
-A final note. The principles we learn is universal and not language dependent. So take language discussions with a pinch of salt. All the best.
-
-#+LATEX: \newpage
-
 * Foreword
 
 By Gerald Sussman of MIT, co-author of the book SICP (the wizard book).

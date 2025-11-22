@@ -1,4 +1,4 @@
-% Created 2025-11-22 Sat 08:26
+% Created 2025-11-22 Sat 11:08
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -121,8 +121,65 @@ well. I am still learning Lisp and programming. With every subsequent reading of
 \tableofcontents
 \clearpage
 
+
+\section{What is Lisp?}
+\label{sec:org1abfd93}
+
+\subsection{History}
+\label{sec:org4570f8e}
+
+LISP stands for List Processor or List Processing. It is a programming language which originated around 1958 at the Massachusetts Institute of Technology (MIT). The original paper titled
+`Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I' was published later in 1960 by John McCarthy the creator or as some put it the discoverer of Lisp. A trivia: The
+term Artificial Intelligence (AI) which has eneterd the public's lexicon today was coined by John McCarthy. The orginal language for AI implementation was none other than Lisp. But the language was geared
+towards symbolic artifical intelliegnece. McCarthy probably wrote his paper as a theoretical exercise and one of his students Steve Russell, as legend says, implemented it overnight on an IBM 704 computer with punch cards!
+At one point of time there were operating systems, hardware called Lisp machines but all that is a part of computing history now.
+
+\subsection{Why Lisp?}
+\label{sec:org478a626}
+
+Lisp has little to no syntax. It is very easy to pick up, I would say even easier than Python. Everything in Lisp is a singly linked list. Each element in a list is called a \texttt{cons} cell. And a \texttt{cons} is made of two components - \texttt{car} and \texttt{cdr}.
+\texttt{car} stands for `contents of address register' and \texttt{cdr} stands for `contents of decrement register'. These were catered to the IBM 704 on which it was first implemented. There is no reason to evangelize Lisp like many prominent
+computer scientists of the past do. My preference comes from the fact that both Lisp and Python take the reader immediately to computer science concepts without wasting time on syntax.
+
+\vspace{1em}
+
+\texttt{[*|*]-{}-{}-> cdr} \(\newline\)
+  \texttt{|} \(\newline\)
+  \texttt{|} \(\newline\)
+  \texttt{V} \(\newline\)
+  \texttt{car}
+\vspace{1em}
+
+Lisp invented a whole long list of computer science concepts which are taken for granted today. Some of which include:
+\begin{itemize}
+\item Garbage collection
+\item REPL
+\item Macros
+\item Homoiconicity (Code = Data)
+\item Dynamic Typing
+\item First Class Functions
+\item Closures
+\item Tail Call Optimization
+etc.
+\end{itemize}
+
+
+Lisp uses a prefix mathematical notation, meaning that we do not say \texttt{(2 + 5)} but \texttt{(+ 2 5)}. The first element could be a function, a special form, or a macro for that matter. Contents in the list get `evaluated'. There are many
+dialects of Lisp, the famous ones are Common Lisp, Clojure, Racket which is a type of Scheme Lisp.
+
+\subsection{Resources to learn Lisp}
+\label{sec:orge5a8474}
+
+The best introductory textbook in my opinion is Professor David Touretzky's book titled `Common Lisp A Gentle Introduction to Symbolic Computing' (2nd ed.). Following that `The Little Schemer' and `The Seasoned Schemer'. The other
+option which is recommended is `How to Design Programs: An Introduction to Programming and Computing', though I have not read it. Finally everyone needs to read `Structure and Interpretation of Computer Programs', myself included.
+
+\vspace{1em}
+A final note. The principles we learn is universal and not language dependent. So take language discussions with a pinch of salt. All the best.
+
+\newpage
+
 \section{Foreword}
-\label{sec:orge085cf0}
+\label{sec:org03a1b9e}
 
 By Gerald Sussman of MIT, co-author of the book SICP (the wizard book).
 
@@ -154,7 +211,7 @@ can be treated as data.
 
 \clearpage
 \section{Preface}
-\label{sec:org64846b7}
+\label{sec:orgc3c54f8}
 
 Key Takeaway:
 \emph{The goal of the book is to teach the reader to think recursively.}
@@ -230,7 +287,7 @@ Some tests for checking \texttt{atom?} in Scheme below:
 
 \newpage
 \section{The Five Rules}
-\label{sec:orgd79b28b}
+\label{sec:orga25c7ee}
 
 \begin{enumerate}
 \item The Law of \texttt{car} : The primitive \texttt{car} is defined only for non-empty lists.
@@ -248,7 +305,7 @@ Some tests for checking \texttt{atom?} in Scheme below:
 \newpage
 
 \section{The Ten Commandments}
-\label{sec:org88bd4e6}
+\label{sec:org45d0427}
 
 The First Commandment
 \begin{itemize}
@@ -312,14 +369,14 @@ The Tenth Commandment
 
 \newpage
 \section{Toys}
-\label{sec:org51e09fe}
+\label{sec:org0bcc283}
 
 This chapter introduces the primitives of Scheme. These are the basic building blocks.
 
 \bigskip
 
 \subsection{The Law of \texttt{car}}
-\label{sec:org814ba1c}
+\label{sec:org2dbd33b}
 Key Takeaway:
 \emph{The primitive \texttt{car} is defined only for non-empty lists. The \texttt{car} is the first atom (element) of that list.}
 
@@ -359,7 +416,7 @@ get an error like below.
 \end{itemize}
 
 \subsection{The Law of \texttt{cdr}}
-\label{sec:orgbc2d30a}
+\label{sec:orga77ed37}
 Key Takeaway:
 \emph{The primitive \texttt{cdr} is defined only for non-empty lists. The \texttt{cdr} of any non-empty list is always another list.}
 
@@ -383,7 +440,7 @@ Key Takeaway:
 
 
 \subsection{The Law of \texttt{cons}}
-\label{sec:org00f9011}
+\label{sec:org0d7619f}
 Key Takeaway:
 \emph{The primitive \texttt{cons} takes two arguments. The second argument to \texttt{cons} must be a list. The result is a list.}
 
@@ -406,7 +463,7 @@ dotted list the last atom points to a non \texttt{NIL} atom. In the above case w
 
 
 \subsection{The Law of \texttt{null?}}
-\label{sec:org42d74ea}
+\label{sec:orgcf48af3}
 Key Takeaway:
 \emph{The primitive \texttt{null?} is defined only for lists.}
 
@@ -429,7 +486,7 @@ for \texttt{()} is \texttt{\#t} and for everything else it is \texttt{\#f}. See 
 \end{itemize}
 
 \subsection{The Law of \texttt{eq?}}
-\label{sec:org98b649e}
+\label{sec:orgd41e905}
 Key Takeaway:
 \emph{The primitive \texttt{eq?} in takes two arguments and compares them. Each must be a non numeric atom.}
 
@@ -454,7 +511,7 @@ Key Takeaway:
 
 \newpage
 \section{Do It, Do It Again, and Again, and Again \ldots{}}
-\label{sec:org692baac}
+\label{sec:org34c5472}
 
 This chapter explains recursion. The best introductory material for recursion in my opinion is Chapter 8 in Prof Touretzky's book.
 
@@ -466,7 +523,7 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Basics of Recursion}
-\label{sec:org77a9085}
+\label{sec:orgaef0510}
 
 \begin{itemize}
 \item After reading Prof Touretzky's chapter on recursion this chapter will feel very easy. Also the first commandment is not
@@ -486,7 +543,7 @@ list is an atom. It can be written as below.
 \end{itemize}
 
 \subsubsection{The important \texttt{cond}}
-\label{sec:org80bf508}
+\label{sec:org0eb7083}
 
 \begin{itemize}
 \item It is important to understand how \texttt{cond} functions. Well \texttt{cond} is actually a macro. This macro has a series of
@@ -500,7 +557,7 @@ list ends. It checks \texttt{car} one by one for each subsequent \texttt{cdr} fo
 \end{itemize}
 
 \subsubsection{Trace tool in Dr Racket}
-\label{sec:org3163f57}
+\label{sec:orga14fc19}
 
 \begin{itemize}
 \item Dr Racket comes with an inbuilt tool called \texttt{trace} in the library package called \textasciitilde{}(racket/trace) which lets us see
@@ -604,7 +661,7 @@ tail optimized recursion is to be studied from the book `Sketchy Scheme' by Nils
 \newpage
 
 \section{Cons the Magnificent}
-\label{sec:orgd223d1e}
+\label{sec:org9a6c5f5}
 
 This chapter explains the methods to build lists using \texttt{cons} recursively.
 
@@ -624,10 +681,10 @@ The changing argument must be tested in the termination condition: when using \t
 \vspace{1em}
 
 \subsection{List Surgery}
-\label{sec:org263a92c}
+\label{sec:org5e37ef8}
 
 \subsubsection{Removing elements}
-\label{sec:orgbd4b659}
+\label{sec:org66f23cf}
 
 \begin{itemize}
 \item In last chapter we made a \texttt{member?} function and in this chapter we will be making a function which will \emph{remove}
@@ -689,7 +746,7 @@ Another example.
 \end{itemize}
 
 \subsubsection{Finding elements}
-\label{sec:org2bf279a}
+\label{sec:orgd11bca1}
 
 \begin{itemize}
 \item Next function is \texttt{firsts} to build a list of the first S-expressions in nested lists. The code and trace is:
@@ -746,7 +803,7 @@ to make the list \texttt{(d f)}. This \texttt{(d f)} is then \texttt{cons}-ed to
 \end{itemize}
 
 \subsubsection{Inserting and substituting elements}
-\label{sec:org45b1043}
+\label{sec:orgcef599b}
 
 \begin{itemize}
 \item Without looking into the questions was able to build these \texttt{cons}-es for \texttt{insertR}, \texttt{insertL}, and \texttt{subst}.
@@ -858,7 +915,7 @@ to make the list \texttt{(d f)}. This \texttt{(d f)} is then \texttt{cons}-ed to
 \end{itemize}
 
 \subsubsection{Multiple surgeries on lists}
-\label{sec:org273c0ea}
+\label{sec:org4ef6893}
 
 \begin{itemize}
 \item Function definition for other `multi' variants below: \texttt{multiinsertR}, \texttt{multiinsertL}, and \texttt{multisubst}.
@@ -957,7 +1014,7 @@ to make the list \texttt{(d f)}. This \texttt{(d f)} is then \texttt{cons}-ed to
 \newpage
 
 \section{Numbers Games}
-\label{sec:org2dfc475}
+\label{sec:org43414d5}
 
 This chapter explains how numbers can be built with recursion.
 
@@ -978,7 +1035,7 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Addition and Subtraction}
-\label{sec:org66f9abd}
+\label{sec:orgb4d533e}
 
 \begin{itemize}
 \item In this chapter we are focusing on only the elements in the set of whole numbers.
@@ -1048,7 +1105,7 @@ at the stack trace below.
 \end{itemize}
 
 \subsection{Tuples}
-\label{sec:org7cc3c18}
+\label{sec:org0e3edf1}
 
 \begin{itemize}
 \item Tuple is defined as a list of numbers. In this case I am assuming non negative numbers and also the book say an empty list will be also a
@@ -1092,7 +1149,7 @@ tuple. I don't think tuple is defined formally in the R\textsuperscript{5}RS sta
 \end{itemize}
 
 \subsection{Multiplication}
-\label{sec:orge4a5c58}
+\label{sec:org7f89970}
 
 \begin{itemize}
 \item Multiplication is repetitive addition. So to build \texttt{x} we have to decrement one number and for every decrement add the other number to itself.
@@ -1129,7 +1186,7 @@ tuple. I don't think tuple is defined formally in the R\textsuperscript{5}RS sta
 \end{itemize}
 
 \subsubsection{Digression to Abstract Algebra}
-\label{sec:org8be745b}
+\label{sec:org18ad56a}
 
 \begin{itemize}
 \item A question is asked why is 0 the value for the terminal condition line in \texttt{x} and the answer to this is because 0 will not affect \texttt{+}. That
@@ -1225,7 +1282,7 @@ runs out of elements i.e. it is an empty tuple, then at that time whatever the p
 \end{itemize}
 
 \subsection{Comparison operators}
-\label{sec:orga3dc4ce}
+\label{sec:org51abbaa}
 
 \begin{itemize}
 \item Definitions of greater than and smaller than \texttt{>} and \texttt{<} is tricky. For greater than \texttt{>} the order of tests  matter. The \texttt{\#f} needs to
@@ -1291,7 +1348,7 @@ for lesser than \texttt{<}.
 \end{itemize}
 
 \subsection{Equality}
-\label{sec:orgdb92c6b}
+\label{sec:org9f2c1d3}
 
 \begin{itemize}
 \item Next we compose the equality function \texttt{=} for numbers. The plain vanilla method is to check if one is zero and whether at the same time the
@@ -1336,7 +1393,7 @@ The code is simple below. The other way which build up on \texttt{>} and \texttt
 \end{itemize}
 
 \subsection{Division}
-\label{sec:orgdc5a3d3}
+\label{sec:org4c98269}
 
 \begin{itemize}
 \item Integer division is implemented smartly by basically figuring out the how many wholes of a number fits into another. Thus discarding any of the
@@ -1387,7 +1444,7 @@ remainder. Wonder how remainder can be obtained via recursion especially for rec
 \end{itemize}
 
 \subsection{Indexing}
-\label{sec:org81e6a6e}
+\label{sec:org953cae1}
 
 \begin{itemize}
 \item Indexing a list or like in Python we refer to elements of a list starting with 0. In this example the book starts indexing with 1. Here I show
@@ -1473,7 +1530,7 @@ the function long and a tad bit complicated.
 \end{itemize}
 
 \subsection{Equality tests in Scheme}
-\label{sec:orgd5ffa8b}
+\label{sec:org0b7ce87}
 
 \begin{itemize}
 \item In Prof Touretzky's book on Common Lisp there is a very nice explanation of equality tests such as \texttt{EQUAL}, \texttt{=}, \texttt{EQ} etc. Similarly in Scheme there are differences
@@ -1583,7 +1640,7 @@ is not necessary to construct this predicate.
 \newpage
 
 \section{* Oh My Gawd *: It's Full of Stars}
-\label{sec:org9f0243a}
+\label{sec:org8036834}
 
 This chapter we start looking at nested lists.
 
@@ -1608,10 +1665,10 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Surgery on nested lists}
-\label{sec:org586359c}
+\label{sec:orgaf03a87}
 
 \subsubsection{Removing a member}
-\label{sec:org8d97005}
+\label{sec:org9073a33}
 
 \begin{itemize}
 \item Removing a member in a nested list. In earlier chapters we only focused on proper non-nested lists but in this we will look at lists within lists. There could
@@ -1671,7 +1728,7 @@ It is fairly logical. The \texttt{trace} on the stack actually shows the entire 
 \end{itemize}
 
 \subsubsection{Inserting a member}
-\label{sec:org9b60afe}
+\label{sec:orgd1262b8}
 
 \begin{itemize}
 \item \texttt{insertR*} is also easy to write but the \texttt{trace} for the example shows detailed stack calls for recursion and the true depth can be gauged as to what is happening in the machine.
@@ -1828,7 +1885,7 @@ recur into the \texttt{car} if required.
 \end{itemize}
 
 \subsubsection{Frequency counting}
-\label{sec:org591c073}
+\label{sec:org219105e}
 
 \begin{itemize}
 \item Next we do a frequency counter across a nested list  and write a function called \texttt{occur*}.
@@ -1927,7 +1984,7 @@ recur into the \texttt{car} if required.
 \end{itemize}
 
 \subsubsection{Substituting}
-\label{sec:orga558108}
+\label{sec:orgd318943}
 
 \begin{itemize}
 \item Similarly we write the \texttt{*} function for \texttt{subst*}. Nothing additional other than keeping in mind that we have to recur inside \texttt{car} of \texttt{l} also.
@@ -2261,7 +2318,7 @@ The trace diagram shows which \texttt{chips} the function found. That is importa
 \end{itemize}
 
 \subsection{\texttt{and} vs \texttt{or}}
-\label{sec:org06de401}
+\label{sec:org4623915}
 
 \begin{itemize}
 \item Again the distinction between \texttt{and} and \texttt{or} is made. For \texttt{and} if the any of the expressions evaluates to \texttt{\#f} then further evaluation
@@ -2366,7 +2423,7 @@ Anyways here is the function
 \newpage
 
 \section{Shadows}
-\label{sec:org5aa612a}
+\label{sec:orge572965}
 
 Names can hide other names. Environments matter.
 
@@ -2383,7 +2440,7 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Symbols and Environments}
-\label{sec:org3f708ba}
+\label{sec:org97968a5}
 
 \begin{itemize}
 \item We enter the realm of what symbols actually mean. A \texttt{+} may mean just a symbol and not an operation of addition. So we may have a traditional arithmetic operation of \texttt{2 + 4 x 5} which is
@@ -2497,7 +2554,7 @@ can be got with a helper function easily. For the normal notation also these hel
 \end{itemize}
 
 \subsubsection{Representations}
-\label{sec:org2516f6f}
+\label{sec:org8d89ff0}
 
 \begin{itemize}
 \item The idea of representations is explicitly stated. \texttt{4} can be stated as say for instance \texttt{(() () () ())} or even \texttt{(I V)}. The book extends
@@ -2549,7 +2606,7 @@ new binding of a variable hides the old binding.The interpreter looks for the ne
 \newpage
 
 \section{Friends and Relations}
-\label{sec:orgd7a7497}
+\label{sec:org7b2554f}
 
 Working with relations and symbolic computation. Manipulate lists of symbols and represent structured data.
 
@@ -2566,7 +2623,7 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Sets and Operations}
-\label{sec:org5b4d089}
+\label{sec:orgfcddeaf}
 
 \begin{itemize}
 \item \texttt{set?} is exactly like the mathematical set in set theory. The book at the end also recommends Naive Set Theory as an interesting read by the great Paul Halmos.
@@ -2576,7 +2633,7 @@ I own a copy but I am yet to read. The other book I like is Book of Proof by Ric
 \end{itemize}
 
 \subsubsection{Set test}
-\label{sec:org4a259ac}
+\label{sec:org3ed61d7}
 
 \begin{itemize}
 \item Writing \texttt{set?} is fairly easy
@@ -2605,7 +2662,7 @@ I own a copy but I am yet to read. The other book I like is Book of Proof by Ric
 \end{itemize}
 
 \subsubsection{Build a set}
-\label{sec:org5414f5f}
+\label{sec:org33b5e2e}
 
 \begin{itemize}
 \item Next we build sets. First we write \texttt{makeset} using \texttt{member?} and then with \texttt{multirember}. There is a difference between the two methods.
@@ -2692,7 +2749,7 @@ given to the \texttt{makeset} function. Trace should show the flow cleanly.
 \end{itemize}
 
 \subsubsection{Subsets}
-\label{sec:org59e0caa}
+\label{sec:orgf065695}
 
 \begin{itemize}
 \item \texttt{subset?} is a test to check if one set is a part of the other set. Each element of the first set should be present in the other
@@ -2720,7 +2777,7 @@ point at a later point in time.
 
 
 \subsubsection{Equality of sets}
-\label{sec:orgd6a2ad4}
+\label{sec:org17f3e71}
 
 \begin{itemize}
 \item Next is the test to see if the sets are exactly the same. We can actually just check is the first set is the subset of the second one
@@ -2738,7 +2795,7 @@ first function we have written without \texttt{cond} so far.
 
 
 \subsubsection{Intersection of sets}
-\label{sec:org33b80cf}
+\label{sec:org1aef3fa}
 
 \begin{itemize}
 \item The predicate \texttt{intersect?} simply checks if the any of the elements in the first set is present in the other set or not. The book asks us
@@ -2766,7 +2823,7 @@ with an \texttt{or} in the else leg.
 \end{itemize}
 
 \subsubsection{Union of sets}
-\label{sec:org4a79fda}
+\label{sec:org856c549}
 
 \begin{itemize}
 \item \texttt{union} picks all the elements across the two sets without repeating the intersect elements. It is exactly the same as union in set theory.
@@ -2791,7 +2848,7 @@ with an \texttt{or} in the else leg.
 \end{itemize}
 
 \subsubsection{Difference of sets}
-\label{sec:org614b988}
+\label{sec:org5e64e59}
 
 \begin{itemize}
 \item This function is the difference in the two sets. Compared to \texttt{union} the only change is that when the first set is null then we return an empty list
@@ -2832,7 +2889,7 @@ Additionally, we need to keep referencing other material at the same time.
 \end{itemize}
 
 \subsection{\texttt{pairs}}
-\label{sec:orgdbfdcd0}
+\label{sec:orga4f634b}
 
 \begin{itemize}
 \item Now we come to one of the most important things in Lisp in general - a pair. In Lisp a pair is the most fundamental data structure. It is created with the function \texttt{cons},
@@ -2896,7 +2953,7 @@ parts of representations of pairs. They will improve readability.
 \end{itemize}
 
 \subsection{Relations}
-\label{sec:orgdbc8dc4}
+\label{sec:org01e4b38}
 
 \begin{itemize}
 \item \texttt{rel} is a relation. Relations are between a set of pairs. This again originates from the concept of relations in set theory. A pair can be
@@ -2930,7 +2987,7 @@ and flow logically.
 \end{itemize}
 
 \subsubsection{Reversing a \texttt{pair}}
-\label{sec:org57bb38e}
+\label{sec:orgf9ef01f}
 
 \begin{itemize}
 \item Another helper function can be written which simply reverses a pair.
@@ -2949,7 +3006,7 @@ and flow logically.
 \end{itemize}
 
 \subsubsection{One to One relations}
-\label{sec:org5305992}
+\label{sec:org483e12e}
 
 \begin{itemize}
 \item Finally we reach the one-to-one function. In set theory this is a function (meaning that each of the element from first set i.e. the domain uniquely maps to an element in the second set i.e. the co-domain) which is one-to-one.
@@ -2980,7 +3037,7 @@ and not be worried about instructing the computer but rather use it as a medium 
 \newpage
 
 \section{Lambda the Ultimate}
-\label{sec:orgd220956}
+\label{sec:org38c4c41}
 
 Introduce anonymous functions and higher order design. \texttt{lambdas} encapsulate behavior and enable abstraction without naming.
 
@@ -3001,10 +3058,10 @@ Key Takeaway:
 \end{itemize}
 
 \subsection{Higher Order Functions}
-\label{sec:org5ad3a51}
+\label{sec:orgf488e3a}
 
 \subsubsection{Passing a Function as an Argument}
-\label{sec:org6cea3ca}
+\label{sec:orge0e67c8}
 
 \begin{itemize}
 \item We re-look at the function to remove a member \texttt{rember} with the test being executed by \texttt{equal}. The learning is that we can create another function \texttt{rember-f} which takes in a function additionally
@@ -3025,7 +3082,7 @@ as an argument and applies it to the \texttt{rember} function. We are learning t
 \end{itemize}
 
 \subsubsection{Functions Returning a Function}
-\label{sec:org740b5a7}
+\label{sec:orgc6ba9b8}
 
 \begin{itemize}
 \item So far we have seen functions returning lists and atoms.
@@ -3084,7 +3141,7 @@ him which remain. Everything else was lost. We do not know where those ideas cou
 \end{itemize}
 
 \subsubsection{Passing Anonymous Functions as Arguments}
-\label{sec:orgf209803}
+\label{sec:org059ea3a}
 
 \begin{itemize}
 \item The insert left or right functions can also be partially curried. One question asked is what is the difference between these two. Its only the order of \texttt{cons} in
@@ -3173,7 +3230,7 @@ We are abstracting out the part that varies to make functions more general and i
 \end{itemize}
 
 \subsubsection{The Power of Functional Abstraction}
-\label{sec:org7f39463}
+\label{sec:orgf4af060}
 
 \begin{itemize}
 \item Now we come across a really smart abstraction. The book builds the \texttt{rember} function using \texttt{insert-g} and a new helper function \texttt{seqrem}. The catch is that the 'new' is simply ignored.
@@ -3317,7 +3374,7 @@ Let us write the function now.
 \end{itemize}
 
 \subsubsection{Collector Functions or Continuations}
-\label{sec:org7c1a579}
+\label{sec:orge9f6b82}
 
 \begin{itemize}
 \item This is the last commandment for the book and it gets fairly dense.
@@ -3350,7 +3407,7 @@ understand what it really is doing.
 \end{itemize}
 
 \subsubsection{Continuation Passing Style}
-\label{sec:org9d19bd3}
+\label{sec:org77ca0bb}
 
 \begin{itemize}
 \item In this section we blow the lid off. Here we will learn a foundational concept for interpreters, compilers, lazy evaluation, backtracking etc.
@@ -3478,10 +3535,10 @@ as an example.
 \end{itemize}
 
 \subsection{Examples on Continuations}
-\label{sec:org098cf77}
+\label{sec:orgef76615}
 
 \subsubsection{Inserting and counting: \texttt{multiinsertLR\&co}}
-\label{sec:orgfcbcc32}
+\label{sec:org85870b8}
 \begin{itemize}
 \item We revisit the functions \texttt{multiinsertL} and \texttt{multiinsertR} from chapter 3: Cons the magnificent.
 \item We can combine the left and right functions as one below:
@@ -3569,7 +3626,7 @@ So finally we get \texttt{multiinsertLR\&co} as below and also we write the coll
 \end{itemize}
 
 \subsubsection{Multiple Number Operations: \texttt{evens-only*\&co}}
-\label{sec:org11389ee}
+\label{sec:orgd6db17d}
 \begin{itemize}
 \item We got back to the \texttt{*} functions in this example. \texttt{*} functions basically traverse entire nested lists.
 \item Short term objective is to right a functions which removes all odd numbers from a nested list of numbers. First we can write a predicate which tests if a number is even or not.
@@ -3692,7 +3749,7 @@ When we pass this to \texttt{evens-only*\&co} we get:
 \newpage
 
 \section{\ldots{} and Again, and Again, and Again, \ldots{}}
-\label{sec:org15f75df}
+\label{sec:org53f124f}
 
 The hardest chapter: Derive recursion without names using self-application. Build the conceptual machinery that leads to fixed point combinators and the Y combinator.
 
@@ -3713,7 +3770,7 @@ Key Takeaway:
 \vspace{1em}
 
 \subsection{Partial Functions}
-\label{sec:org607ff12}
+\label{sec:org03c8289}
 \begin{itemize}
 \item With a series of examples we are led to the concept of partial functions. Initially the reader will be stumped to find that their elementary logic be defied but on reading what
 the function \texttt{looking} and \texttt{keep-looking} do then things fall into place easily. In this \texttt{lat} which is the argument to \texttt{looking} the numbers determine where we eventually land up
@@ -3848,7 +3905,7 @@ it is partial is because if the argument is \texttt{((a b) (c d))} this function
 \end{itemize}
 
 \subsection{Recursive nature of functions}
-\label{sec:org9eb780b}
+\label{sec:org896d625}
 
 \begin{itemize}
 \item Next is the famous Collatz Conjecture which is defined as the function \texttt{C} in the book. Collatz rule is simple where we start from any positive integer and do repeated procedure basis the rule:
@@ -3950,7 +4007,7 @@ Now if we pass the argument (4 3) my machine will go on endlessly probably till 
 \end{itemize}
 
 \subsection{Turing Halting Problem}
-\label{sec:org775d5ca}
+\label{sec:org80ba5b8}
 
 \begin{itemize}
 \item The next endeavor is to write a function which will tell us if a function is a total or a partial function. The book is slowly leading us into the true definition of recursion and functions
@@ -3960,7 +4017,7 @@ limits of mathematics, Gödel incompleteness, and Turing machines.
 \end{itemize}
 
 \subsection{What is Recursion? What is a Function?}
-\label{sec:orge73855e}
+\label{sec:org8dc517e}
 
 \begin{itemize}
 \item \texttt{will-stop?} is a function to show the Turing Halting problem cannot be `defined' in our programming language or for that matter any programming language. This is the last leg of this chapter.
@@ -3977,7 +4034,7 @@ limits of mathematics, Gödel incompleteness, and Turing machines.
 \end{itemize}
 
 \subsubsection{Closures and Lexical Scoping}
-\label{sec:org7165019}
+\label{sec:org13aa951}
 \begin{itemize}
 \item The first time we have a \texttt{lambda} expression without defining it. Dr. Racket will see the \texttt{lambda} expression, evaluate it and then return a procedure value which is a closure. So the value
 of a \texttt{lambda} expression is a procedure. Now what is a closure? A closure is a function in its lexical scoped environment. A closure is a pair of \texttt{(code environment)}. We can use an example here
@@ -4006,7 +4063,7 @@ But under dynamic scoping \texttt{(g)} will check the value of \texttt{x} on the
 \end{itemize}
 
 \subsubsection{The Y Combinator Derivation}
-\label{sec:org1237bee}
+\label{sec:org066dd0e}
 
 \begin{itemize}
 \item Back to the first \texttt{lambda} expression. Here it is.
@@ -4345,7 +4402,7 @@ but if one were to derive the Y Combinator by themselves it will be a tough task
 \newpage
 
 \section{What Is the Value of All of This?}
-\label{sec:org0cea4b8}
+\label{sec:org121bb1a}
 
 Climax of the book which leads to getting ready to build an interpreter.
 
@@ -4360,7 +4417,7 @@ Shows that evaluation itself is just another recursive function built from struc
 \vspace{1em}
 
 \subsection{Entries and Lookups}
-\label{sec:orgb4449b2}
+\label{sec:orgb43b463}
 
 \begin{itemize}
 \item An entry is defined as a pair of lists whose first list is a set and both the lists in the entry have equal length.
@@ -4450,7 +4507,7 @@ only.
 \end{itemize}
 
 \subsection{Values}
-\label{sec:org39c1607}
+\label{sec:orge156ed6}
 
 \begin{itemize}
 \item Next is a series of expressions we can test out in the REPL of Dr Racket.
@@ -4494,7 +4551,7 @@ only.
 \end{itemize}
 
 \subsection{Types, Value, and Meaning}
-\label{sec:org886f198}
+\label{sec:orgbcee5b1}
 
 \begin{itemize}
 \item The next set of questions just wants us to know what types are and how they are being defined in the current context. Listing them below. For folks from C language do not get confused here! Also this type system is specific to
@@ -4621,7 +4678,7 @@ With a helper of \texttt{cond-lines-of cdr}.
 \end{itemize}
 
 \subsection{Evaluation and Application}
-\label{sec:orgeb495f4}
+\label{sec:org3f2add8}
 
 \begin{itemize}
 \item The working example is good to follow through. Here \texttt{coffee} evaluates to \texttt{\#t} and then \texttt{klatsch} gives 5 as the final answer.
@@ -4727,7 +4784,7 @@ very important.
 \newpage
 
 \section{Intermission}
-\label{sec:orgaea1a9c}
+\label{sec:org9ec3c44}
 
 \begin{itemize}
 \item Books to read in my opinion from the list based on my personal knowledge
